@@ -6,11 +6,13 @@ import 'calculator_controller.dart';
 class CalculatorScreen extends StatelessWidget {
   final CalculatorController controller = Get.put(CalculatorController());
 
+  CalculatorScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Calculator'),
+        title: const Text('Calculator'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -18,33 +20,33 @@ class CalculatorScreen extends StatelessWidget {
           children: [
             TextField(
               controller: controller.number1Controller,
-              decoration: InputDecoration(labelText: 'Number 1'),
+              decoration: const InputDecoration(labelText: 'Number 1'),
               keyboardType: TextInputType.number,
             ),
             TextField(
               controller: controller.number2Controller,
-              decoration: InputDecoration(labelText: 'Number 2'),
+              decoration: const InputDecoration(labelText: 'Number 2'),
               keyboardType: TextInputType.number,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
                   onPressed: () => controller.add(),
-                  child: Text('Add'),
+                  child: const Text('Add'),
                 ),
                 ElevatedButton(
                   onPressed: () => controller.subtract(),
-                  child: Text('Subtract'),
+                  child: const Text('Subtract'),
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Obx(
               () => Text(
                 'Result: ${controller.result}',
-                style: TextStyle(fontSize: 24),
+                style: const TextStyle(fontSize: 24),
               ),
             ),
           ],
